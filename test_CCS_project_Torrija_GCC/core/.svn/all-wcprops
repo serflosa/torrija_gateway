@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/core
+END
+contiki.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/core/contiki.h
+END
+contiki-version.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/core/contiki-version.h
+END
+contiki-lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/core/contiki-lib.h
+END
+contiki-net.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/core/contiki-net.h
+END

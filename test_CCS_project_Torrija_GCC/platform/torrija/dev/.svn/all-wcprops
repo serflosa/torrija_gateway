@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev
+END
+buttons.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/buttons.c
+END
+cc2520_process.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/cc2520_process.h
+END
+buttons.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/buttons.h
+END
+leds_torrija.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/leds_torrija.c
+END
+ethernet_process.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/ethernet_process.h
+END
+hal_cc2520.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/hal_cc2520.c
+END
+msp430_arch.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/msp430_arch.c
+END
+leds_torrija.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/leds_torrija.h
+END
+cc2520ll.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/cc2520ll.c
+END
+adc.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/adc.c
+END
+hal_cc2520.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/hal_cc2520.h
+END
+msp430_arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/msp430_arch.h
+END
+cc2520ll.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/cc2520ll.h
+END
+adc.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/adc.h
+END
+cc2520_process.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/dev/cc2520_process.c
+END

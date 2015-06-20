@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp
+END
+descriptors.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/descriptors.c
+END
+device.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/device.h
+END
+descriptors.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/descriptors.h
+END
+usb_hardware.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/usb_hardware.c
+END
+usb_hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/usb_hardware.h
+END
+usb_def.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_msp/usb_def.h
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/application-rfid
+END
+rfid-processes.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/application-rfid/rfid-processes.c
+END
+rfid-processes.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/application-rfid/rfid-processes.h
+END

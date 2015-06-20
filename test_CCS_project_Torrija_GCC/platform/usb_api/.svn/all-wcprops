@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_api
+END
+usb.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_api/usb.h
+END
+usb_cdc.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_api/usb_cdc.c
+END
+usb_cdc.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_api/usb_cdc.h
+END
+usb.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/usb_api/usb.c
+END

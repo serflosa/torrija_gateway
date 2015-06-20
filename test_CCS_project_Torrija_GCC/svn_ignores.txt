@@ -1,0 +1,8 @@
+*.obj
+*.out
+*.map
+*.cmd
+.launches
+Obj
+.project
+.cdtproject

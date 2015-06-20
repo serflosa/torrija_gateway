@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/utils
+END
+random.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/utils/random.c
+END
+sense_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/utils/sense_utils.h
+END
+sense_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/platform/torrija/utils/sense_utils.c
+END

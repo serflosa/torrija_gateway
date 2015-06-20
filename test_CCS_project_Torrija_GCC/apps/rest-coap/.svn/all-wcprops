@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/rest-coap
+END
+coap-server.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/rest-coap/coap-server.c
+END
+coap-common.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/rest-coap/coap-common.c
+END
+coap-server.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/rest-coap/coap-server.h
+END
+coap-common.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/rest-coap/coap-common.h
+END

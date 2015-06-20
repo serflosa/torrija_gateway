@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10/trunk/torrija_host_coapserver_v0.2/apps/application-usb
+END
+usb-processes.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/11/trunk/torrija_host_coapserver_v0.2/apps/application-usb/usb-processes.h
+END
+usb-processes.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/11/trunk/torrija_host_coapserver_v0.2/apps/application-usb/usb-processes.c
+END

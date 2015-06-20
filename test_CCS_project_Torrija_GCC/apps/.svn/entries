@@ -1,0 +1,43 @@
+10
+
+dir
+10
+https://torrija-gateway.googlecode.com/svn/trunk/torrija_host_coapserver_v0.2/apps
+https://torrija-gateway.googlecode.com/svn
+
+
+
+2011-08-31T22:36:02.771334Z
+10
+sergiofloriano@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6b8ec642-7653-cc9c-6d53-5b893542da04
+
+coap-app
+dir
+
+rest-common
+dir
+
+application-rfid
+dir
+
+application-usb
+dir
+
+rest-coap
+dir
+
