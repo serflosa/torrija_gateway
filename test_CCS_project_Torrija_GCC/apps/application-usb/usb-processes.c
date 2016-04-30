@@ -197,102 +197,137 @@ uint8_t retInString(char* string)
   return FALSE;                               // Otherwise, it wasn't found
 }
 
+
 uint8_t parse_line(char *string)
 {
-  uint8_t pos=0,len=0,slash=0;
-  uint8_t addr_init=0;
-  uint8_t addr_end=0;
-  uint8_t addr_found=0; 
-  uint8_t port_init=0;
-  uint8_t resource_init=0;
-  uint8_t resource_end=0;
-  uint8_t request_init=0;
-  uint8_t request_end=0;
-  uint8_t payload_init=0;
-  uint8_t request_found=0;
-  uint8_t option_found=0; 
+  int len;
+  char *method;
+  char *protocol;
+  char *address;
+  char *nul;
+  char *port;
  
-/*  
-  usbin_packet.addr_sensor = "";
-  usbin_packet.port[5] = "";
-  usbin_packet.request[10] = "";
-  usbin_packet.resource[20] = "";
-  usbin_packet.payload[14] = "";*/
-  //char tempStr[MAX_STR_LENGTH] = "";  
-  //strncpy(tempStr,string,strlen(string));     // Make a copy of the string
-  strncpy(wholeString,string,strlen(string));
-  len = strlen(wholeString);    
-  while(pos < len)
-  {
-  	if((pos<len) && (wholeString[pos] == 0x5B)) // "[" 
-  	{
-   	 addr_init = pos + 1;
-  	}
-  	if((pos<len) && (wholeString[pos] == 0x5D)) // "]"
-  	{
-  		addr_end = pos - 1;
-  		addr_found = 1;
-  		strncpy(usbin_packet.addr_sensor,&wholeString[addr_init],(addr_end-addr_init+1));
-  		if((wholeString[pos+1] == ':')){
-  			strncpy(usbin_packet.port,&wholeString[pos + 2],5);
-  		}else{
-  			strncpy(usbin_packet.port,"61616",5);
-  		}
-  	}	
-   	if((pos<len) && (addr_found) && (wholeString[pos] == '/')){
-  		slash++;
-  		if (slash==1){
-  			resource_init = pos + 1;
-  		}
-  	}
-  	if((pos<len) && (0 < resource_init) && (wholeString[pos] == '?')){
-  		request_found = 1;
-  		resource_end = pos - 1;
-  		request_init = pos + 1;
-  	}
-  	if((resource_init>0)&&(wholeString[pos] == ' ')){
-  		
-  		if (!resource_end){
-  			resource_end = pos - 1;
-  		}
-  		if((0 < request_init)&&(!request_end)){ 		
-  			request_end = pos - 1;
-  		}
-  	}	
-  	if((pos<len) && (0 < resource_end) && (wholeString[pos] == '-')){
-  		option_found = 1;
-  		if (wholeString[pos+1] == 'l'){
-  			payload_init = pos+3; // " -l "
-  		}	
-  	}pos++;
-  }
-  sendData_inBackground("\r\n-----Sending Coap packet to: ",31,1,0);
+  strncpy(wholeString, string, strlen(string));
+  len = strlen(wholeString);
+
+  method = strtok(wholeString, " ");
+  sendData_inBackground("\r\nMETHOD :",10,1,0);
+  sendData_inBackground(method, strlen(method),1,0);
+  protocol = strtok(NULL, "[" );
+  address = strtok(NULL, "]");
   sendData_inBackground("\r\nADDRESS:",10,1,0);
-  sendData_inBackground(usbin_packet.addr_sensor,(addr_end-addr_init+1),1,0);
+  sendData_inBackground(address, strlen(address),1,0);
+  nul = strtok(NULL, ":");
+  port = strtok(NULL, "/");
   sendData_inBackground("\r\nPORT:",7,1,0);
-  sendData_inBackground(usbin_packet.port,5,1,0);
+  sendData_inBackground(port, strlen(port),1,0);
   
-  if (!resource_end){
-  	resource_end = len;
-  }
-  if (!request_end){
-  	request_end = len;
-  }
-  if (resource_init){
-  	strncpy(usbin_packet.resource,&wholeString[resource_init],(resource_end-resource_init+1));
-  	sendData_inBackground("\r\nRESOURCE:",11,1,0);
-  	sendData_inBackground(usbin_packet.resource,(resource_end-resource_init+1),1,0);
-  }
-  if (request_found){
-  	strncpy(usbin_packet.request,&wholeString[request_init],(request_end-request_init+1));
-  	sendData_inBackground("\r\nREQUEST:",10,1,0);
-  	sendData_inBackground(usbin_packet.request,(request_end-request_init+1),1,0);
-  }
-  if(option_found){ 
-  	strncpy(usbin_packet.payload,&wholeString[payload_init],(len-payload_init));
-  	sendData_inBackground("\r\nPAYLOAD:",10,1,0);
-  	sendData_inBackground(usbin_packet.payload,(len-payload_init),1,0);
-  }	
+  //strcmp(S1,S2);
+
   sendData_inBackground("\r\n-----\r\n",9,1,0);
   return 0;
 } 
+
+
+
+
+
+//uint8_t parse_line(char *string)
+//{
+//  uint8_t pos=0,len=0,slash=0;
+//  uint8_t addr_init=0;
+//  uint8_t addr_end=0;
+//  uint8_t addr_found=0;
+//  uint8_t port_init=0;
+//  uint8_t resource_init=0;
+//  uint8_t resource_end=0;
+//  uint8_t request_init=0;
+//  uint8_t request_end=0;
+//  uint8_t payload_init=0;
+//  uint8_t request_found=0;
+//  uint8_t option_found=0;
+//
+///*
+//  usbin_packet.addr_sensor = "";
+//  usbin_packet.port[5] = "";
+//  usbin_packet.request[10] = "";
+//  usbin_packet.resource[20] = "";
+//  usbin_packet.payload[14] = "";*/
+//  //char tempStr[MAX_STR_LENGTH] = "";
+//  //strncpy(tempStr,string,strlen(string));     // Make a copy of the string
+//  strncpy(wholeString,string,strlen(string));
+//  len = strlen(wholeString);
+//  while(pos < len)
+//  {
+//  	if((pos<len) && (wholeString[pos] == 0x5B)) // "["
+//  	{
+//   	 addr_init = pos + 1;
+//  	}
+//  	if((pos<len) && (wholeString[pos] == 0x5D)) // "]"
+//  	{
+//  		addr_end = pos - 1;
+//  		addr_found = 1;
+//  		strncpy(usbin_packet.addr_sensor,&wholeString[addr_init],(addr_end-addr_init+1));
+//  		if((wholeString[pos+1] == ':')){
+//  			strncpy(usbin_packet.port,&wholeString[pos + 2],5);
+//  		}else{
+//  			strncpy(usbin_packet.port,"61616",5);
+//  		}
+//  	}
+//   	if((pos<len) && (addr_found) && (wholeString[pos] == '/')){
+//  		slash++;
+//  		if (slash==1){
+//  			resource_init = pos + 1;
+//  		}
+//  	}
+//  	if((pos<len) && (0 < resource_init) && (wholeString[pos] == '?')){
+//  		request_found = 1;
+//  		resource_end = pos - 1;
+//  		request_init = pos + 1;
+//  	}
+//  	if((resource_init>0)&&(wholeString[pos] == ' ')){
+//
+//  		if (!resource_end){
+//  			resource_end = pos - 1;
+//  		}
+//  		if((0 < request_init)&&(!request_end)){
+//  			request_end = pos - 1;
+//  		}
+//  	}
+//  	if((pos<len) && (0 < resource_end) && (wholeString[pos] == '-')){
+//  		option_found = 1;
+//  		if (wholeString[pos+1] == 'l'){
+//  			payload_init = pos+3; // " -l "
+//  		}
+//  	}pos++;
+//  }
+//  sendData_inBackground("\r\n-----Sending Coap packet to: ",31,1,0);
+//  sendData_inBackground("\r\nADDRESS:",10,1,0);
+//  sendData_inBackground(usbin_packet.addr_sensor,(addr_end-addr_init+1),1,0);
+//  sendData_inBackground("\r\nPORT:",7,1,0);
+//  sendData_inBackground(usbin_packet.port,5,1,0);
+//
+//  if (!resource_end){
+//  	resource_end = len;
+//  }
+//  if (!request_end){
+//  	request_end = len;
+//  }
+//  if (resource_init){
+//  	strncpy(usbin_packet.resource,&wholeString[resource_init],(resource_end-resource_init+1));
+//  	sendData_inBackground("\r\nRESOURCE:",11,1,0);
+//  	sendData_inBackground(usbin_packet.resource,(resource_end-resource_init+1),1,0);
+//  }
+//  if (request_found){
+//  	strncpy(usbin_packet.request,&wholeString[request_init],(request_end-request_init+1));
+//  	sendData_inBackground("\r\nREQUEST:",10,1,0);
+//  	sendData_inBackground(usbin_packet.request,(request_end-request_init+1),1,0);
+//  }
+//  if(option_found){
+//  	strncpy(usbin_packet.payload,&wholeString[payload_init],(len-payload_init));
+//  	sendData_inBackground("\r\nPAYLOAD:",10,1,0);
+//  	sendData_inBackground(usbin_packet.payload,(len-payload_init),1,0);
+//  }
+//  sendData_inBackground("\r\n-----\r\n",9,1,0);
+//  return 0;
+//}

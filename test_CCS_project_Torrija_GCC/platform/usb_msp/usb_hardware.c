@@ -285,16 +285,16 @@ void * memcpyDMA2(void * dest, const void * source, size_t count)
 void __attribute__((interrupt(USB_UBM_VECTOR))) iUsbInterruptHandler(void)
 {
     uint8_t bWakeUp = FALSE;
-  
-    //Check if the setup interrupt is pending. 
-    //We need to check it before other interrupts, 
+
+    //Check if the setup interrupt is pending.
+    //We need to check it before other interrupts,
     //to work around that the Setup Int has lower priority then Input Endpoint 0
     if (USBIFG & SETUPIFG)
     {
-        bWakeUp = SetupPacketInterruptHandler();  
+        bWakeUp = SetupPacketInterruptHandler();
         USBIFG &= ~SETUPIFG;    // clear the interrupt bit
-    }   
-    
+    }
+
     switch (__even_in_range(USBVECINT & 0x3f, USBVECINT_OUTPUT_ENDPOINT7))
     {
       case USBVECINT_NONE:
@@ -311,14 +311,14 @@ void __attribute__((interrupt(USB_UBM_VECTOR))) iUsbInterruptHandler(void)
         /*if (wUsbEventMask & kUSB_clockFaultEvent){ bWakeUp = USB_handleClockEvent();}*/
         break;
       case USBVECINT_PWR_VBUSOn:
-        PWRVBUSonHandler();      
-		bWakeUp = usb_reconnect();       
+        PWRVBUSonHandler();
+		bWakeUp = usb_reconnect();
         //if (wUsbEventMask & kUSB_VbusOnEvent){ bWakeUp = USB_handleVbusOnEvent();
         break;
       case USBVECINT_PWR_VBUSOff:
         PWRVBUSoffHandler();
-        bWakeUp = TRUE;       
-        // if (wUsbEventMask & kUSB_VbusOffEvent){bWakeUp = USB_handleVbusOffEvent();}     
+        bWakeUp = TRUE;
+        // if (wUsbEventMask & kUSB_VbusOffEvent){bWakeUp = USB_handleVbusOffEvent();}
         break;
       case USBVECINT_USB_TIMESTAMP:
         break;
@@ -344,7 +344,7 @@ void __attribute__((interrupt(USB_UBM_VECTOR))) iUsbInterruptHandler(void)
         //-- after resume we will wake up! Independ what event handler says.
         bWakeUp = TRUE;
         break;
-      case USBVECINT_SETUP_PACKET_RECEIVED: 
+      case USBVECINT_SETUP_PACKET_RECEIVED:
 // WATCHOUT:
         // NAK both IEP and OEP enpoints
         tEndPoint0DescriptorBlock.bIEPBCNT = EPBCNT_NAK;
@@ -352,14 +352,14 @@ void __attribute__((interrupt(USB_UBM_VECTOR))) iUsbInterruptHandler(void)
 //--------------------------------------------------------
         bWakeUp = SetupPacketInterruptHandler();
         break;
-  
+
       case USBVECINT_STPOW_PACKET_RECEIVED:
         break;
-  
+
       case USBVECINT_INPUT_ENDPOINT1:
         break;
       case USBVECINT_INPUT_ENDPOINT2:
-        break; 
+        break;
       case USBVECINT_INPUT_ENDPOINT3:
             //send saved bytes from buffer...
             bWakeUp = CdcToHostFromBuffer();
@@ -382,12 +382,12 @@ void __attribute__((interrupt(USB_UBM_VECTOR))) iUsbInterruptHandler(void)
             if (!CdcIsReceiveInProgress()){
             	bWakeUp = usb_data_received(1);
                 // if (wUsbEventMask & kUSB_dataReceivedEvent) {bWakeUp = USBCDC_handleDataReceived(1);}
-            }else{               
+            }else{
                 bWakeUp = CdcToBufferFromHost(); //complete receive opereation - copy data to user buffer
             }
         #endif
         break;
-  
+
       case USBVECINT_OUTPUT_ENDPOINT4:
         break;
       case USBVECINT_OUTPUT_ENDPOINT5:

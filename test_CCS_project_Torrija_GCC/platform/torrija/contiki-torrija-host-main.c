@@ -22,10 +22,11 @@
 #define 	WAFERIPOSY		0x01A10
 
 /*---------------------------------------------------------------------------*/
-#pragma FUNC_NEVER_RETURNS(main);
+//#pragma FUNC_NEVER_RETURNS(main);
 void
 main(void)
 {
+  _disable_interrupts();
   msp430_init();
   clock_init();
 	
